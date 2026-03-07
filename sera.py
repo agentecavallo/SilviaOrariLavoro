@@ -14,7 +14,7 @@ TABELLA_ORE = {
 st.set_page_config(page_title="Calcolatore Ore", page_icon="🕒")
 st.title("Calcolatore Ore - Turni CUP")
 
-st.write("Niente più file Excel impazziti! Copia la colonna dei turni dal file originale e incollala qui sotto.")
+st.write("Niente più calcoli astrusi con possibilità di errore, Michelone Approved!.")
 
 # 3. Creiamo un grande box di testo dove incollare i turni
 testo_incollato = st.text_area("Incolla qui la colonna dei turni:", height=300, placeholder="Incolla qui l'intera colonna dei tuoi turni mensili")
