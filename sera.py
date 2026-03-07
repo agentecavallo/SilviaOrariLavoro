@@ -12,7 +12,7 @@ TABELLA_ORE = {
 
 # 2. Interfaccia visiva
 st.set_page_config(page_title="Calcolatore Ore", page_icon="🕒")
-st.title("Calcolatore Ore - Turno Sera 🌙")
+st.title("Calcolatore Ore - Turni CUP")
 
 st.write("Niente più file Excel impazziti! Copia la colonna dei turni dal file originale e incollala qui sotto.")
 
