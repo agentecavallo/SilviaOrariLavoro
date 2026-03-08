@@ -12,12 +12,22 @@ TABELLA_ORE = {
 
 # 2. Interfaccia visiva
 st.set_page_config(page_title="Calcolatore Ore", page_icon="🕒")
-st.title("Calcolatore Ore - Turni CUP")
+st.title("Calcolatore Ore - Turno Sera 🌙")
 
-st.write("Niente più calcoli astrusi con possibilità di errore, Michelone Approved!.")
+# --- INSERIMENTO FIRMA ---
+# Inserisce l'immagine a 60 pixel di larghezza. 
+# Se ti sembra troppo piccola, puoi aumentare il numero (es. width=100)
+try:
+    st.image("michelone.jpg", width=60)
+except Exception:
+    # Se l'immagine non si trova su GitHub, non fa bloccare l'app
+    pass
+# -------------------------
+
+st.write("Niente più file Excel impazziti! Copia la colonna dei turni dal file originale e incollala qui sotto.")
 
 # 3. Creiamo un grande box di testo dove incollare i turni
-testo_incollato = st.text_area("Incolla qui la colonna dei turni:", height=300, placeholder="Incolla qui l'intera colonna dei tuoi turni mensili")
+testo_incollato = st.text_area("Incolla qui la colonna dei turni:", height=300, placeholder="Incolla qui...\nEsempio:\nM1r\nP\nF\n...")
 
 # 4. Pulsante per far partire il calcolo
 if st.button("Calcola Ore", type="primary"):
@@ -33,8 +43,7 @@ if st.button("Calcola Ore", type="primary"):
         righe = testo_incollato.split('\n')
         
         for riga in righe:
-            # Puliamo la riga da spazi vuoti accidentali e trasformiamo in minuscolo
-            # Così se tua moglie copia "M1r", "m1r" o " M1r ", il programma lo capisce lo stesso
+            # Puliamo la riga e trasformiamo in minuscolo
             valore_pulito = riga.strip().lower()
             
             # Se la sigla incollata è nella nostra tabella, sommiamo le ore
