@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 
 # 1. Definiamo la tabella dei valori
 TABELLA_ORE = {
@@ -12,16 +11,15 @@ TABELLA_ORE = {
 }
 
 # 2. Interfaccia visiva
-st.set_page_config(page_title="Calcolatore Ore", page_icon="🕒")
+# 🧮 QUI HO CAMBIATO L'ICONA: ho messo la calcolatrice al posto dell'orologio
+st.set_page_config(page_title="Calcolatore Ore", page_icon="🧮")
 st.title("Calcolatore Ore - Turni CUP")
 
 # --- INSERIMENTO FIRMA ---
-# Inserisce l'immagine a 60 pixel di larghezza. 
-# Se non la trova, ti avvisa con un messaggio per aiutarti a capire perché.
 try:
     st.image("michelone.jpg", width=60)
 except FileNotFoundError:
-    st.error("⚠️ Attenzione: Non riesco a trovare il file 'michelone.jpg'. Controlla su GitHub che sia caricato e che il nome sia scritto tutto minuscolo!")
+    st.error("⚠️ Attenzione: Non riesco a trovare il file 'michelone.jpg'.")
 except Exception as e:
     st.error(f"⚠️ Errore con l'immagine: {e}")
 # -------------------------
