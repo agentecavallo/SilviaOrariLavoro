@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 # 1. Definiamo la tabella dei valori
 TABELLA_ORE = {
@@ -12,22 +13,23 @@ TABELLA_ORE = {
 
 # 2. Interfaccia visiva
 st.set_page_config(page_title="Calcolatore Ore", page_icon="🕒")
-st.title("Calcolatore Ore - Turno Sera 🌙")
+st.title("Calcolatore Ore - Turni CUP")
 
 # --- INSERIMENTO FIRMA ---
 # Inserisce l'immagine a 60 pixel di larghezza. 
-# Se ti sembra troppo piccola, puoi aumentare il numero (es. width=100)
+# Se non la trova, ti avvisa con un messaggio per aiutarti a capire perché.
 try:
     st.image("michelone.jpg", width=60)
-except Exception:
-    # Se l'immagine non si trova su GitHub, non fa bloccare l'app
-    pass
+except FileNotFoundError:
+    st.error("⚠️ Attenzione: Non riesco a trovare il file 'michelone.jpg'. Controlla su GitHub che sia caricato e che il nome sia scritto tutto minuscolo!")
+except Exception as e:
+    st.error(f"⚠️ Errore con l'immagine: {e}")
 # -------------------------
 
-st.write("Niente più file Excel impazziti! Copia la colonna dei turni dal file originale e incollala qui sotto.")
+st.write("Niente più calcoli astrusi con possibilità di errore, Michelone Approved!.")
 
-# 3. Creiamo un grande box di testo dove incollare i turni
-testo_incollato = st.text_area("Incolla qui la colonna dei turni:", height=300, placeholder="Incolla qui...\nEsempio:\nM1r\nP\nF\n...")
+# 3. Creiamo un box di testo dimezzato (height=150)
+testo_incollato = st.text_area("Incolla qui la colonna dei turni:", height=150, placeholder="Incolla qui l'intera colonna dei tuoi turni mensili")
 
 # 4. Pulsante per far partire il calcolo
 if st.button("Calcola Ore", type="primary"):
