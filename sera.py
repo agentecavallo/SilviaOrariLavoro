@@ -11,8 +11,8 @@ TABELLA_ORE = {
 }
 
 # 2. Interfaccia visiva
-# 🧮 QUI HO CAMBIATO L'ICONA: ho messo la calcolatrice al posto dell'orologio
-st.set_page_config(page_title="Calcolatore Ore", page_icon="🧮")
+# 🕰️ QUI HO RIMESSO L'OROLOGIO ANALOGICO!
+st.set_page_config(page_title="Calcolatore Ore", page_icon="🕰️")
 st.title("Calcolatore Ore - Turni CUP")
 
 # --- INSERIMENTO FIRMA ---
