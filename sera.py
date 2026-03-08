@@ -27,7 +27,7 @@ except Exception as e:
 st.write("Niente più calcoli astrusi con possibilità di errore!")
 
 # 3. Creiamo un box di testo dimezzato (height=150)
-testo_incollato = st.text_area("dopo aver copiato tutta la tua colonna sul file excel su Google Drive incollala qui sotto:", height=150, placeholder="Incolla qui l'intera colonna dei tuoi turni mensili")
+testo_incollato = st.text_area("dopo aver copiato tutta la tua colonna turni dal file su Google Drive incollala qui sotto:", height=150, placeholder="Incolla qui l'intera colonna dei tuoi turni mensili")
 
 # 4. Pulsante per far partire il calcolo
 if st.button("Calcola Ore", type="primary"):
