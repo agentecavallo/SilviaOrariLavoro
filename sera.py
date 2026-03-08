@@ -24,7 +24,7 @@ except Exception as e:
     st.error(f"⚠️ Errore con l'immagine: {e}")
 # -------------------------
 
-st.write("Niente più calcoli astrusi con possibilità di errore, Michelone Approved!.")
+st.write("Niente più calcoli astrusi con possibilità di errore!")
 
 # 3. Creiamo un box di testo dimezzato (height=150)
 testo_incollato = st.text_area("Incolla qui la colonna dei turni:", height=150, placeholder="Incolla qui l'intera colonna dei tuoi turni mensili")
